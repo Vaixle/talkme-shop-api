@@ -1,5 +1,15 @@
 # talkme-shop-api
 
+#### Conntents:
+
+#### - [Requirments](#Requirments) 
+
+#### - [Tsk](#Task) 
+
+#### - [Authentication](#Authentication-on-the-server) 
+
+#### - [Requesting programs](#Next-we-are-requesting-programs) 
+
 ## Requirments
 Java, Spring boot 2, MySQL 5+, JPA or Hibernate 5+ to work with the database, Tomcat, database with indexes and links and close to 3rd normal form
 
