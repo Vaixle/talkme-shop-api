@@ -6,17 +6,28 @@ Java, Spring boot 2, MySQL 5+, JPA or Hibernate 5+ to work with the database, To
 
 ## Task
 The database is designed by the subject.
-Authentication on the server:
+
+### Authentication on the server:
+
+---
+
 https://developers.admitad.com/ru/doc/api_ru/auth/auth-client/
+```
 curl -H 'Authorization: Basic [token]' -X POST https://api.admitad. com/token/ -d 'grant_type=[type]&client_id=[client_id]&scope=[scope]'
+```
 From here we get access_token and refresh_token. Do not request new tokens unless necessary (i.e. until the old one is expired).
 
-refresh_token - is used to refresh access_token -
+***refresh_token*** - is used to refresh ***access_token*** -
 https://developers.admitad.com/ru/doc/api_ru/auth/auth-refresh-token/
 
-Next we are requesting programs:
+### Next we are requesting programs:
+
+---
+
 https://developers.admitad.com/ru/doc/api_ru/methods/advcampaigns/advcampaigns-website-list/
+```
 curl -L -H 'Authorization: [token]' -X GET https://api.admitad.com/advcampaigns/website/2090016/?limit=[number]
+```
 
 Programs are stored in the database with a certain periodicity (adding and then updating).
 
