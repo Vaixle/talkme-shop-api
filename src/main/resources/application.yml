@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    show-sql: true
+    hibernate.ddl-auto: update
+    open-in-view: false
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+admitad:
+  access-grant-type: 'client_credentials'
+  refresh-grant-type: 'refresh_token'
+  client-id: 'Mt44BBCMKwYD5BEPLiY9FFdaul21xn'
+  scope: 'advcampaigns websites public_data advcampaigns_for_website'
+  authorization-token: 'TXQ0NEJCQ01Ld1lENUJFUExpWTlGRmRhdWwyMXhuOkFESFlJaUJvb2RvUUhIWDVsZVZudTAzbklDa0RDUg=='
+  limit: 3
