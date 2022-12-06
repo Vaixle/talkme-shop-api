@@ -9,8 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-// Todo: explain for what this entry point
-
+//Handle auth exceptions
 @Component
 public class CustomAuthenticationEntryPoint extends BasicAuthenticationEntryPoint {
 

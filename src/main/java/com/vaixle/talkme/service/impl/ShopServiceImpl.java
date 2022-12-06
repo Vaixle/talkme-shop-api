@@ -13,6 +13,7 @@ import com.vaixle.talkme.service.ShopService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -55,6 +56,14 @@ public class ShopServiceImpl implements ShopService {
         List<Shop> shops = shopMapper.shopDtosToShops(results.getShopDtos());
 
         shopRepository.saveAll(shops);
+    }
+
+    @Override
+    @Transactional
+    public ResponseEntity<?> getShops(int page, int size) {
+        PageRequest pageReq = PageRequest.of(page, size);
+        List<Shop> shops = shopRepository.findAll(pageReq).getContent();
+        return ResponseEntity.ok().body(shopMapper.shopsToShopDtos(shops));
     }
 
 }

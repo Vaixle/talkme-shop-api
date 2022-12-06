@@ -60,6 +60,16 @@
             <artifactId>jackson-dataformat-xml</artifactId>
             <version>2.11.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate.search</groupId>
+            <artifactId>hibernate-search-mapper-orm</artifactId>
+            <version>6.1.7.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.search</groupId>
+            <artifactId>hibernate-search-backend-lucene</artifactId>
+            <version>6.1.7.Final</version>
+        </dependency>
     </dependencies>
 
     <build>

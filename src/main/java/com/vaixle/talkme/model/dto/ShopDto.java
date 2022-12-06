@@ -17,15 +17,11 @@ public class ShopDto implements Serializable {
   private Long id;
   private String name;
   private String image;
-
   @JsonProperty("gotolink")
   private String goToLink;
-
   @JsonProperty("products_xml_link")
   private String productsXMLLink;
-
   private List<CategoryDto> categories;
-
   @JsonProperty("actions_detail")
   private List<ActionsDetailDto> actionsDetail;
 }

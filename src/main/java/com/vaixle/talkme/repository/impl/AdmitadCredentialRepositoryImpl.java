@@ -1,6 +1,7 @@
 package com.vaixle.talkme.repository.impl;
 
 import com.vaixle.talkme.configuration.property.AdmitadProperty;
+import com.vaixle.talkme.exception.security.AdmitadCredentialGetTokenException;
 import com.vaixle.talkme.payload.response.JwtResponse;
 import com.vaixle.talkme.repository.AdmitadCredentialRepository;
 import lombok.AccessLevel;
@@ -36,7 +37,9 @@ public class AdmitadCredentialRepositoryImpl implements AdmitadCredentialReposit
       this.refreshToken = response.getRefreshToken();
       this.accessTokenExpiration =
           LocalDateTime.now().plus(Long.parseLong(response.getExpiresIn()), ChronoUnit.MILLIS);
-    } // todo: else throw some exception
+    } else {
+      throw new AdmitadCredentialGetTokenException();
+    }
   }
 
   @Override
@@ -54,7 +57,9 @@ public class AdmitadCredentialRepositoryImpl implements AdmitadCredentialReposit
       this.refreshToken = response.getRefreshToken();
       this.accessTokenExpiration =
           LocalDateTime.now().plus(Long.parseLong(response.getExpiresIn()), ChronoUnit.MILLIS);
-    } // todo: else throw some exception
+    } else {
+      throw new AdmitadCredentialGetTokenException();
+    }
     return accessToken;
   }
 

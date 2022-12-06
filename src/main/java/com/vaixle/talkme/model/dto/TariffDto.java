@@ -12,10 +12,10 @@ import java.util.List;
 @NoArgsConstructor
 public class TariffDto implements Serializable {
   private Long id;
-
   @JsonProperty("action_id")
   private Long actionId;
-
   private String name;
   private List<RateDto> rates;
+
+
 }

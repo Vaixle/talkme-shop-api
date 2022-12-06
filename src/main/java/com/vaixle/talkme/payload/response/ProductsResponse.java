@@ -14,14 +14,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 public class ProductsResponse {
 
-
-
-//      @JacksonXmlElementWrapper(localName = "currencies")
-//      @JacksonXmlProperty(localName = "currency")
-//      CurrencyDto[] currencyDtos;
-
       @JacksonXmlProperty(localName = "shop")
       ProductShopDto productShopDto;
-
 
 }

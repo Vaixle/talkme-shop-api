@@ -19,6 +19,6 @@ public class RateDto implements Serializable {
   private String country;
   @JsonProperty("date_s")
   private String date;
-
+  @JsonProperty("is_percentage")
   private Boolean isPercentage;
 }

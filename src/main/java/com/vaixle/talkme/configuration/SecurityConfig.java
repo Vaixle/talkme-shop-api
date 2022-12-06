@@ -1,7 +1,6 @@
 package com.vaixle.talkme.configuration;
 
 import com.vaixle.talkme.configuration.authentication.CustomAuthenticationEntryPoint;
-import com.vaixle.talkme.filter.AuthTokenFilter;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -13,7 +12,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -21,8 +19,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfig {
 
   CustomAuthenticationEntryPoint authenticationEntryPoint;
-
-  AuthTokenFilter authTokenFilter;
 
   @Bean
   public PasswordEncoder encoder() {
@@ -44,7 +40,6 @@ public class SecurityConfig {
         .and().logout().logoutUrl("/sign-out")
         .and().authorizeRequests().antMatchers("/sign-in").permitAll()
         .anyRequest().authenticated();
-    http.addFilterBefore(authTokenFilter, UsernamePasswordAuthenticationFilter.class);
     return http.build();
   }
 }

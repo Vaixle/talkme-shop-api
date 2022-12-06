@@ -18,13 +18,7 @@ import java.util.List;
 public class ProductShopDto {
 
     String name;
-
     String url;
-
-//    @JacksonXmlElementWrapper(localName = "currencies")
-//    @JacksonXmlProperty(localName = "currency")
-//    List<CurrencyDto> currencyDtoList;
-
     @JacksonXmlElementWrapper(localName = "offers")
     @JacksonXmlProperty(localName = "offer")
     List<ProductDto> offers;

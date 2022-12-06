@@ -23,15 +23,13 @@ public class ScheduleConfiguration {
 
     AdmitadProperty admitadProperty;
 
-    @Scheduled(cron = "0 * * ? * *")
+    @Scheduled(cron = "${admitad.schedule-update-shops}")
     private void scheduleUnloadShopsTask() throws JsonProcessingException {
         shopService.unloadShops(admitadProperty.getLimit());
     }
 
-
-    @Scheduled(cron = "0 * * ? * *")
+    @Scheduled(cron = "${admitad.schedule-update-products}")
     private void scheduleUnloadProducts() throws JsonProcessingException {
         productService.unloadProducts();
     }
-
 }

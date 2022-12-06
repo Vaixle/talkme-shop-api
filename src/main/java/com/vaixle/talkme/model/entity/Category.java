@@ -23,9 +23,4 @@ public class Category extends BaseEntity {
 
   String language;
 
-
-
-//  @ManyToOne(fetch = FetchType.LAZY)
-//  @JoinColumn(name = "program_id")
-//  Program program;
 }

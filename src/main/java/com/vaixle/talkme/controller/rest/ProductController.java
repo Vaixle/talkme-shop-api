@@ -1,6 +1,6 @@
 package com.vaixle.talkme.controller.rest;
 
-import com.vaixle.talkme.service.ShopService;
+import com.vaixle.talkme.service.ProductService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -14,14 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public class ShopsController {
+public class ProductController {
 
-    ShopService shopService;
+    ProductService productService;
 
-    @GetMapping("/shops")
-    ResponseEntity<?> getShops(@RequestParam int page,
+    @GetMapping("/products")
+    ResponseEntity<?> getShops(@RequestParam(name = "search") String searchTerm,
+                               @RequestParam String field,
+                               @RequestParam int page,
                                @RequestParam int size)  {
-        return shopService.getShops(page, size);
+        return productService.getProducts(searchTerm, field, page, size);
     }
-
 }

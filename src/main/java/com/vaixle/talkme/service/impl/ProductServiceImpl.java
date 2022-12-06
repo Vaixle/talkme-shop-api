@@ -3,15 +3,15 @@ package com.vaixle.talkme.service.impl;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import com.vaixle.talkme.configuration.property.AdmitadProperty;
 import com.vaixle.talkme.mapper.ProductMapper;
+import com.vaixle.talkme.model.dto.ProductDto;
 import com.vaixle.talkme.model.entity.Product;
 import com.vaixle.talkme.model.entity.Shop;
 import com.vaixle.talkme.payload.response.ProductsResponse;
 import com.vaixle.talkme.repository.ProductRepository;
 import com.vaixle.talkme.repository.ShopRepository;
-import com.vaixle.talkme.service.AdmitadCredentialService;
 import com.vaixle.talkme.service.ProductService;
+import com.vaixle.talkme.service.search.HibernateSearchService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -31,16 +31,15 @@ public class ProductServiceImpl implements ProductService {
 
     RestTemplate restTemplate;
 
-    AdmitadCredentialService admitadCredentialService;
-
-    AdmitadProperty admitadProperty;
-
     ProductMapper productMapper;
 
     ProductRepository productRepository;
 
     ShopRepository shopRepository;
 
+    HibernateSearchService hibernateSearchService;
+
+    @Override
     @Transactional
     public void unloadProducts() {
 
@@ -53,8 +52,6 @@ public class ProductServiceImpl implements ProductService {
                 throw new RuntimeException(e);
             }
         });
-
-
     }
 
     private void saveEntities(String link) throws JsonProcessingException {
@@ -68,5 +65,12 @@ public class ProductServiceImpl implements ProductService {
         List<Product> products = productMapper.productDtosToProducts(productsResponse.getProductShopDto().getOffers());
 
         productRepository.saveAll(products);
+    }
+
+    @Override
+    @Transactional
+    public ResponseEntity<?> getProducts(String searchTerm, String field, int page, int size) {
+        List<ProductDto> shops = hibernateSearchService.searchForProducts(searchTerm, page, size, field);
+        return ResponseEntity.ok().body(shops);
     }
 }
