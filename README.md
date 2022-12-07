@@ -11,6 +11,7 @@
     - [Add admin role](#Add-admin-role)
     - [Rest service](#Rest-service)
 - [Solution](#Solution)
+- [API](#Solution)
 
 ### Task
 The database is designed by the subject.
@@ -68,3 +69,6 @@ The products are also uploaded to the database - description - https://support.a
 | [Add admin role](#Add-admin-role) | [click](https://github.com/Vaixle/talkme-shop-api/blob/main/src/main/java/com/vaixle/talkme/configuration/SecurityConfig.java) |
 | [Rest service](#Rest-service) | [click](https://github.com/Vaixle/talkme-shop-api/tree/main/src/main/java/com/vaixle/talkme/controller/rest) |
 
+#### API
+---
+In progress...
