@@ -1,5 +1,6 @@
 package com.vaixle.talkme.configuration;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.vaixle.talkme.configuration.property.AdmitadProperty;
 import com.vaixle.talkme.service.ProductService;
 import com.vaixle.talkme.service.ShopService;
@@ -8,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 
 @Configuration
 @EnableScheduling
@@ -21,13 +23,13 @@ public class ScheduleConfiguration {
 
     AdmitadProperty admitadProperty;
 
-//    @Scheduled(cron = "${admitad.schedule-update-shops}")
-//    private void scheduleUnloadShopsTask() throws JsonProcessingException {
-//        shopService.unloadShops(admitadProperty.getLimit());
-//    }
-//
-//    @Scheduled(cron = "${admitad.schedule-update-products}")
-//    private void scheduleUnloadProducts() throws JsonProcessingException {
-//        productService.unloadProducts();
-//    }
+    @Scheduled(cron = "${admitad.schedule-update-shops}")
+    private void scheduleUnloadShopsTask() throws JsonProcessingException {
+        shopService.unloadShops(admitadProperty.getLimit());
+    }
+
+    @Scheduled(cron = "${admitad.schedule-update-products}")
+    private void scheduleUnloadProducts() throws JsonProcessingException {
+        productService.unloadProducts();
+    }
 }
