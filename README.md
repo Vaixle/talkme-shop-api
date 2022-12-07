@@ -10,6 +10,7 @@
     - [Schedule upload](#Schedule-upload)
     - [Add admin role](#Add-admin-role)
     - [Rest service](#Rest-service)
+- [Solution](#Solution)
 
 ### Task
 The database is designed by the subject.
@@ -56,3 +57,5 @@ The products are also uploaded to the database - description - https://support.a
 ---
 - We make a rest service to get the stores from our database. Paged. And do a search - it returns the found products (search by model and name) from our database. The results are returned page by page.
 - And rest to get categories.
+
+### Solution
