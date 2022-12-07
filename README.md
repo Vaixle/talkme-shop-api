@@ -39,7 +39,7 @@ curl -L -H 'Authorization: [token]' -X GET https://api.admitad.com/advcampaigns/
 - Shops are stored in the database with a certain periodicity (adding and then updating).
 - The important things from the program are the title, the action details, the image, the categories (the nesting is not important, it is the category set itself), the shopping URL (gotolink) and the main feed of the products (products_xml_link).
 
-#### Uplload products:
+#### Upload products:
 ---
 The products are also uploaded to the database - description - https://support.admitad.com/hc/ru/articles/4405920538897-%D0%A2%D0%BE%D0%B2%D0%B0%D1%80%D0%BD%D1%8B%D0%B9-%D1%84%D0%B8%D0%B4
 
@@ -63,3 +63,6 @@ The products are also uploaded to the database - description - https://support.a
 |----------------|----------------|
 | [Authentication on the server](#Authentication-on-the-server)  |[click](https://github.com/Vaixle/talkme-shop-api/blob/main/src/main/java/com/vaixle/talkme/repository/impl/AdmitadCredentialRepositoryImpl.java)  |
 | [Requesting shops](#Requesting-shops) | [click](https://github.com/Vaixle/talkme-shop-api/blob/main/src/main/java/com/vaixle/talkme/service/impl/ShopServiceImpl.java) |
+| [Upload products](#Upload-products) | [click](https://github.com/Vaixle/talkme-shop-api/blob/main/src/main/java/com/vaixle/talkme/service/impl/ProductServiceImpl.java) |
+| [Schedule upload](#Schedule-upload) | [click](https://github.com/Vaixle/talkme-shop-api/blob/main/src/main/java/com/vaixle/talkme/configuration/ScheduleConfiguration.java) |
+
