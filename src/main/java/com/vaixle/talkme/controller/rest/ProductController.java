@@ -19,7 +19,7 @@ public class ProductController {
     ProductService productService;
 
     @GetMapping("/products")
-    ResponseEntity<?> getShops(@RequestParam(name = "search") String searchTerm,
+    public ResponseEntity<?> getShops(@RequestParam(name = "search") String searchTerm,
                                @RequestParam String field,
                                @RequestParam int page,
                                @RequestParam int size)  {

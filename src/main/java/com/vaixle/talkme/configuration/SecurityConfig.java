@@ -38,7 +38,10 @@ public class SecurityConfig {
         .httpBasic().authenticationEntryPoint(authenticationEntryPoint)
         .and().formLogin().loginProcessingUrl("/sign-in")
         .and().logout().logoutUrl("/sign-out")
+        .invalidateHttpSession(true)
+        .deleteCookies("JSESSIONID")
         .and().authorizeRequests().antMatchers("/sign-in").permitAll()
+        .antMatchers("/api/shops/edit").hasRole("ADMIN")
         .anyRequest().authenticated();
     return http.build();
   }

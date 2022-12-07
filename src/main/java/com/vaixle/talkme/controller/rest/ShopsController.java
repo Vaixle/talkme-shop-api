@@ -1,14 +1,12 @@
 package com.vaixle.talkme.controller.rest;
 
+import com.vaixle.talkme.payload.request.EditShopRequest;
 import com.vaixle.talkme.service.ShopService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
@@ -19,9 +17,14 @@ public class ShopsController {
     ShopService shopService;
 
     @GetMapping("/shops")
-    ResponseEntity<?> getShops(@RequestParam int page,
+    public ResponseEntity<?> getShops(@RequestParam int page,
                                @RequestParam int size)  {
         return shopService.getShops(page, size);
+    }
+
+    @PostMapping("/shops/edit")
+    public void editShop(@RequestBody EditShopRequest editShopRequest)  {
+        shopService.editShop(editShopRequest);
     }
 
 }

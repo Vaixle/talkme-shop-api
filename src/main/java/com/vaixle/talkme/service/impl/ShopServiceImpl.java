@@ -4,8 +4,10 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vaixle.talkme.configuration.property.AdmitadProperty;
+import com.vaixle.talkme.exception.shop.ShopNotFoundException;
 import com.vaixle.talkme.mapper.ShopMapper;
 import com.vaixle.talkme.model.entity.Shop;
+import com.vaixle.talkme.payload.request.EditShopRequest;
 import com.vaixle.talkme.payload.response.ProgramsResponse;
 import com.vaixle.talkme.repository.ShopRepository;
 import com.vaixle.talkme.service.AdmitadCredentialService;
@@ -66,4 +68,13 @@ public class ShopServiceImpl implements ShopService {
         return ResponseEntity.ok().body(shopMapper.shopsToShopDtos(shops));
     }
 
+    @Override
+    @Transactional
+    public void editShop(EditShopRequest editShopRequest) {;
+        Long id = editShopRequest.getId();
+        Shop shop = shopRepository.findById(id).orElseThrow(() -> new ShopNotFoundException(id));
+        shop.setName(editShopRequest.getName());
+        shop.setImage(editShopRequest.getImage());
+        shopRepository.save(shop);
+    }
 }
