@@ -59,3 +59,7 @@ The products are also uploaded to the database - description - https://support.a
 - And rest to get categories.
 
 ### Solution
+| Task | Solution |
+|----------------|----------------|
+| [Authentication on the server](#Authentication-on-the-server)  |[click](https://github.com/Vaixle/talkme-shop-api/blob/main/src/main/java/com/vaixle/talkme/repository/impl/AdmitadCredentialRepositoryImpl.java)  |
+| [Requesting shops](#Requesting-shops) | [click](https://github.com/Vaixle/talkme-shop-api/blob/main/src/main/java/com/vaixle/talkme/service/impl/ShopServiceImpl.java) |
