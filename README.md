@@ -71,4 +71,114 @@ The products are also uploaded to the database - description - https://support.a
 
 #### API
 ---
-In progress...
+***End point*** `/api/shops`
+
+***Method*** `GET`
+
+***Role***
+- all
+
+***Params***
+- page
+- size
+
+***Response body***
+```
+[
+    {
+        "id": 251,
+        "name": "Fornex Hosting",
+        "image": "https://cdn.admitad-connect.com/campaign/images/2020/10/16/251-ddd08a99b3e03533.png",
+        "categories": [
+            {
+                "id": 122,
+                "name": "Программы и IT-сервисы",
+                "language": "ru"
+            },
+            {
+                "id": 18,
+                "name": "Интернет-услуги",
+                "language": "ru"
+            },
+            {
+                "id": 206,
+                "name": "Онлайн для B2B",
+                "language": "ru"
+            }
+        ],
+        "gotolink": "https://ad.admitad.com/g/9553369e590a06b3f87424ebb742f6/",
+        "products_xml_link": null,
+        "actions_detail": [
+            {
+                "tariffs": [
+                    {
+                        "id": 11,
+                        "name": "Оплаченный заказ - default",
+                        "rates": [
+                            {
+                                "id": 13807,
+                                "size": 70.0,
+                                "country": null,
+                                "tariff_id": null,
+                                "price_s": 0.0,
+                                "date_s": "2013-01-01",
+                                "is_percentage": true
+                            }
+                        ],
+                        "action_id": 11
+                    }
+                ],
+                "id": 11,
+                "name": "Оплаченный заказ",
+                "type": "sale",
+                "hold_size": 0.0
+            }
+        ]
+    }
+]
+
+```
+
+***End point*** `/api/shops/edit`
+
+***Method*** `POST`
+
+***Role***
+- admin
+
+***Request body***
+```
+{
+    "id":"251",
+    "name":"new",
+    "image":"new"
+}
+```
+
+***End point*** `/api/products`
+
+***Method*** `GET`
+
+***Role***
+- all
+
+***Params***
+- search
+- field
+- page
+- size
+
+***Response body***
+```
+[
+    {
+        "id": 258902,
+        "name": "Battlefield 1. Революция (PS4) (GameReplay)",
+        "model": "Electronic Arts",
+        "price": 1699.0,
+        "image": "https://www.gamepark.ru",
+        "goToLink": "https://aflink.ru/g/af8ef42a170a06b3f874e8b31ead25/?f_id=15855&ulp=https%3A%2F%2Fwww.gamepark.ru%2Fused%2Fgames%2FBattlefield1TherevolutionPS4GameReplay%2F&i=5"
+    }
+]
+```
+
