@@ -65,4 +65,6 @@ The products are also uploaded to the database - description - https://support.a
 | [Requesting shops](#Requesting-shops) | [click](https://github.com/Vaixle/talkme-shop-api/blob/main/src/main/java/com/vaixle/talkme/service/impl/ShopServiceImpl.java) |
 | [Upload products](#Upload-products) | [click](https://github.com/Vaixle/talkme-shop-api/blob/main/src/main/java/com/vaixle/talkme/service/impl/ProductServiceImpl.java) |
 | [Schedule upload](#Schedule-upload) | [click](https://github.com/Vaixle/talkme-shop-api/blob/main/src/main/java/com/vaixle/talkme/configuration/ScheduleConfiguration.java) |
+| [Add admin role](#Add-admin-role) | [click](https://github.com/Vaixle/talkme-shop-api/blob/main/src/main/java/com/vaixle/talkme/configuration/SecurityConfig.java) |
+| [Rest service](#Rest-service) | [click](https://github.com/Vaixle/talkme-shop-api/tree/main/src/main/java/com/vaixle/talkme/controller/rest) |
 
