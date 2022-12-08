@@ -78,12 +78,12 @@ The products are also uploaded to the database - description
 | **HTTP METHOD** |**PATH** |**ROLE**|**QUERY PARAMETRS** |**REQUEST BODY** |**RESPONSE BODY** |*DESCRIPTION** |
 |----------------|----------------|----------------|----------------|----------------|----------------|----------------|
 |**GET**|`/api/shops`|any|`page` {**required**}</span> - return result page <br> `size` {**required**} - return size of page|none|[click](#GET-/api/shops) |Getting list of shops|
-|**POST**|`/api/shops/edit`|admin|none|[click](#POST-/api/shops/edit|none| Editing shop name and image|
+|**POST**|`/api/shops/edit`|admin|none|[click](#POST-/api/shops/edit)|none| Editing shop name and image|
 |**GET**|`/api/products`|any|`search` {**required**} - words for search <br>`field` {**required**} - filter for search *avalible values* ***name*** or ***model***<br>`page` {**required**} - return result page <br>`size` {**required**} - return size of page|none|[click](#GET-/api/products)|Getting list of products by name or model|
 
 ##### GET /api/shops
 
-Response body
+> Response body
 ```
 [
     {
@@ -142,7 +142,7 @@ Response body
 
 ##### POST /api/shops/edit
 
-Request body
+> Request body
 ```
 {
     "id":"251",
@@ -153,7 +153,7 @@ Request body
 
 ##### GET /api/products
 
-Response body
+> Response body
 ```
 [
     {
