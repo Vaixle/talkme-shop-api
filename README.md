@@ -74,18 +74,16 @@ The products are also uploaded to the database - description
 
 #### API
 ---
-***End point*** `/api/shops`
 
-***Method*** `GET`
+| **HTTP METHOD** |**PATH** |**ROLE**|**QUERY PARAMETRS** |**REQUEST BODY** |**RESPONSE BODY** |*DESCRIPTION** |
+|----------------|----------------|----------------|----------------|----------------|----------------|----------------|
+|**GET**|`/api/shops`|any|`page` {**required**}</span> - return result page <br> `size` {**required**} - return size of page|none|[click](#GET-/api/shops) |Getting list of shops|
+|**POST**|`/api/shops/edit`|admin|none|[click](#POST-/api/shops/edit|none| Editing shop name and image|
+|**GET**|`/api/products`|any|`search` {**required**} - words for search <br>`field` {**required**} - filter for search *avalible values* ***name*** or ***model***<br>`page` {**required**} - return result page <br>`size` {**required**} - return size of page|none|[click](#GET-/api/products)|Getting list of products by name or model|
 
-***Role***
-- all
+##### GET /api/shops
 
-***Params***
-- page
-- size
-
-***Response body***
+Response body
 ```
 [
     {
@@ -142,14 +140,9 @@ The products are also uploaded to the database - description
 
 ```
 
-***End point*** `/api/shops/edit`
+##### POST /api/shops/edit
 
-***Method*** `POST`
-
-***Role***
-- admin
-
-***Request body***
+Request body
 ```
 {
     "id":"251",
@@ -158,20 +151,9 @@ The products are also uploaded to the database - description
 }
 ```
 
-***End point*** `/api/products`
+##### GET /api/products
 
-***Method*** `GET`
-
-***Role***
-- all
-
-***Params***
-- search
-- field
-- page
-- size
-
-***Response body***
+Response body
 ```
 [
     {
