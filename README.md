@@ -5,7 +5,7 @@
 ## Conntents:
 
 - [Task](#Task) 
-    - [Requirments](#Requirments) 
+    - [Main Technologies](#Main-technologies) 
     - [Authentication on the server](#Authentication-on-the-server) 
     - [Requesting shops](#Requesting-shops) 
     - [Upload products](#Upload-products)
@@ -17,6 +17,12 @@
 
 ### Task
 The database is designed by the subject.
+
+#### Main Technologies
+
+| **Database** |                             ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)                                                                                                                                 |
+|:------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| **Backend**  |                                                                              [![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white)](https://dev.java/) [![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/)  
 
 #### Requirments
 Java, Spring boot 2, MySQL 5+, JPA or Hibernate 5+ to work with the database, Tomcat, database with indexes and links and close to 3rd normal form
@@ -75,8 +81,8 @@ The products are also uploaded to the database - description
 #### API
 ---
 
-| **HTTP METHOD** |**PATH** |**ROLE**|**QUERY PARAMETRS** |**REQUEST BODY** |**RESPONSE BODY** |*DESCRIPTION** |
-|----------------|----------------|----------------|----------------|----------------|----------------|----------------|
+| **HTTP METHOD** |**PATH** |**ROLE**|**QUERY PARAMETRS** |**REQUEST BODY** |**RESPONSE BODY** |**DESCRIPTION** |
+|----------------|----------------|:---------:|----------------|:---------:|:---------:|----------------|
 |**GET**|`/api/shops`|any|`page` {**required**}</span> - return result page <br> `size` {**required**} - return size of page|none|[click](#get-apishops) |Getting list of shops|
 |**POST**|`/api/shops/edit`|admin|none|[click](#post-apishopsedit)|none| Editing shop name and image|
 |**GET**|`/api/products`|any|`search` {**required**} - words for search <br>`field` {**required**} - filter for search *avalible values* ***name*** or ***model***<br>`page` {**required**} - return result page <br>`size` {**required**} - return size of page|none|[click](#get-apiproducts)|Getting list of products by name or model|
